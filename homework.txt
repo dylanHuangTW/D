@@ -1,0 +1,36 @@
+x = float(input("Please enter a number."))
+y = str(input("Please enter a unit(feet, meter, mile, km, c, f)."))
+
+unit =["feet", "meter", "mile", "km"]
+
+my_dict = {"feet": 0.3048, "meter": 3.2808399, "mile": 1.609344, "km": 0.621371192, "f": 0, "c": 0}
+my_dict2 = {"feet": "meter", "mile": "km", "meter": "feet", "km": "miles"}
+
+def converter(x):
+    if y in unit:
+        conversion_factor = my_dict[y]
+    elif "c" in y:
+        conversion_factor = 0
+        print("{0} C is {1} F.".format(x, 9 * x / 5 + 32))
+    elif "C" in y:
+        conversion_factor = 0
+        print("{0} C is {1} F.".format(x, 9 * x / 5 + 32))
+    elif "f" in y:
+        conversion_factor = 0
+        print("{0} F is {1} C.".format(x, (x - 32) * 5 / 9))
+    elif "F" in y:
+        conversion_factor = 0
+        print("{0} F is {1} C.".format(x, (x - 32) * 5 / 9))
+    else:
+        conversion_factor = 0
+        print("error")
+
+    return conversion_factor * x
+
+if converter(x) != 0:
+    print("{0} {1} is {2} {3}.".format(x, y, converter(x), my_dict2[y]))
+
+
+
+
+
