@@ -47,5 +47,6 @@ if __name__ == '__main__':
 
     #h_n = interpolate_h(Q, b, n_m=n_m, m_bank=m_bank, S=S)
 
-print (interpolate_h(Q, b, m_bank, S,k_st = 20 ))
+h_n= interpolate_h(Q, b, m_bank, S,k_st = 20 )
 
+print (h_n)
